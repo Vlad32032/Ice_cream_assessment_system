@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: black;
+}
+
+/* header */
+
+.header {
+    width: 100%;
+    height: 50px;
+
+    background-color: rgba(113, 113, 248, 0.973);
+}
+
+/* main */
+
+.wrapper {
+    padding: 5px;
+}
+
+/* show-li? */
+.children-list .show-li {
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    margin: 5px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgb(226, 226, 226);
+}
+
+.children-list .hide-li {
+    display: none;
+}
+
+.children-list .active-li {
+    background-color: rgb(185, 243, 162);
+}
+
+.children-list li h3 {
+    width: 30%;
+
+    color: black;
+}
+
+.isecream-wrapper {
+    height: 44px;
+    display: flex;
+}
+
+.isecream-wrapper img {
+    width: 40px;
+    height: 40px;
+}
+
+.isecream-wrapper div {
+    position: relative;
+}
+
+.action-div {
+    width: 52px;
+    height: 44px;
+
+    position: absolute;
+    top: -44px;
+}
+
+.active-icecream {
+    background-color: rgb(80, 238, 88);
+}
+
+/* footer */
+
+.footer {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(113, 113, 248, 0.973);
+}
