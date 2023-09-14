@@ -1,36 +1,42 @@
 const childrenList = [
     {
         name: "Пиздюк Обыкновенный",
+        group: "groupOne",
         littleIcecream: 0,
         bigIcecream: 0,
         hide: false
     },
     {
         name: "Пиздючка Обыкновенная",
+        group: "groupOne",
         littleIcecream: 0,
         bigIcecream: 0,
         hide: false
     },
     {
         name: "Пиздюк Особенный",
+        group: "groupOne",
         littleIcecream: 0,
         bigIcecream: 0,
         hide: false
     },
     {
         name: "Пиздючка Особенная",
+        group: "groupTwo",
         littleIcecream: 0,
         bigIcecream: 0,
         hide: false
     },
     {
         name: "Пиздюк Мелкий",
+        group: "groupTwo",
         littleIcecream: 0,
         bigIcecream: 0,
         hide: false
     },
     {
         name: "Пиздючка Крупная",
+        group: "groupTwo",
         littleIcecream: 0,
         bigIcecream: 0,
         hide: false
@@ -40,6 +46,8 @@ const childrenList = [
 // --- nodes ---
 
 const childrenListElement = document.getElementById("childrenListElement");
+const groupOneButton = document.getElementById("groupOne");
+const groupTwoButton = document.getElementById("groupTwo");
 const incrementButton = document.getElementById("increment");
 const decrementButton = document.getElementById("decrement");
 const restartButton = document.getElementById("restart");
@@ -73,6 +81,16 @@ function getChildrenTamplate(children, index) {
         </li>
     `
 }
+
+function sortChildren(group) {
+    for (let children of childrenList) {
+        if (children.group === group) {
+            children.hide = false;
+        } else {
+            children.hide = true;
+        };
+    };
+};
 
 function render(arr) {
     childrenListElement.innerHTML = "";
@@ -108,6 +126,16 @@ childrenListElement.onclick = function (event) {
 
         render(childrenList);
     };
+};
+
+groupOneButton.onclick = function () {
+    sortChildren("groupOne");
+    render(childrenList);
+};
+
+groupTwoButton.onclick = function () {
+    sortChildren("groupTwo");
+    render(childrenList);
 };
 
 incrementButton.onclick = function () {
