@@ -1,4 +1,4 @@
-const childrenList = [
+const startChildrenList = [
     {
         name: "Пиздюк Обыкновенный",
         group: "groupOne",
@@ -42,6 +42,10 @@ const childrenList = [
         hide: false
     }
 ];
+
+const childrenList = localStorage.getItem("childrenList") ? 
+    JSON.parse(localStorage.getItem("childrenList")) :
+    JSON.parse(JSON.stringify(startChildrenList))
 
 // --- nodes ---
 
@@ -103,13 +107,11 @@ function sortChildren(group) {
 function render(arr) {
     childrenListElement.innerHTML = "";
 
-    // if (arr.length === 0) {
-    //     return;
-    // };
-
     for (let i = 0; i < arr.length; i++) {
         childrenListElement.insertAdjacentHTML("beforeend", getChildrenTamplate(arr[i], i))
     };
+
+    localStorage.setItem("childrenList", JSON.stringify(arr))
 };
 
 // --- action ---
