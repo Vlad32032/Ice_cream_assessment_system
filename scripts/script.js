@@ -63,17 +63,25 @@ function getChildrenTamplate(children, index) {
     return `
         <li class="${actionChildren === index ? "active-li": ""} ${children.hide ? "hide-li" : "show-li"}">
             <div class="isecream-wrapper">
-                <button data-index="${index}" data-type="hide">&times;</button>
+                <button class="button-hide" data-index="${index}" data-type="hide">&times;</button>
                 <h3 >${children.name}</h3>
             </div>
             <div class="isecream-wrapper">
                 <div class="${(actionChildren === index && actionIcecreamType === "littleIcecream") ? "active-icecream" : ""}">
-                    <img src="./images/svg/icecream-svgrepo-com.svg">
+                    <img src="${children.littleIcecream === 0 ?
+                        "./images/svg/ice-cream-small-ghost.svg" :
+                        "./images/svg/ice-cream-small.svg"
+                    }">
                     <span>${children.littleIcecream}</span>
                     <div class="action-div" data-type="littleIcecream" data-index="${index}"></div>
                 </div>
                 <div class="${(actionChildren === index && actionIcecreamType === "bigIcecream") ? "active-icecream" : ""}">
-                    <img src="./images/svg/icecream-svgrepo-com.svg">
+                    <img
+                        src="${children.bigIcecream === 0 ?
+                            "./images/svg/ice-cream-big-ghost.svg" :
+                            "./images/svg/ice-cream-big.svg"
+                        }
+                    ">
                     <span>${children.bigIcecream}</span>
                     <div class="action-div" data-type="bigIcecream" data-index="${index}"></div>
                 </div>
